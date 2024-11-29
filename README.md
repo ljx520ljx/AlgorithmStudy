@@ -21,36 +21,23 @@ This repository contains a collection of algorithm implementations and solutions
 
 The code in this repository is organized by algorithmic technique and problem category. Each directory contains related problems and their solutions. The repository includes solutions in **Go** programming language.
 
----
-
-## BFS
-- `RightViewOfBinaryTree.go`
-- `numIslands.go`
-
----
-
-## DFS
-- `numIslands.go`
-- `wordBreak.go`
-
----
-
-## DynamicProgramming
-- `ClimbStairs.go`
-- `MaximumSumOfSubarrays.go`
-- `...`
-
----
-
-## Greedy
-- `canJump.go`
-- `lengthOfLIS.go`
-
----
-
-## Other
-- `...`
-
+```
+.
+├── BFS
+│ ├── RightViewOfBinaryTree.go
+│ └── numIslands.go
+├── DFS
+│ ├── numIslands.go
+│ └── wordBreak.go
+├── DynamicProgramming
+│ ├── ClimbStairs.go
+│ ├── MaximumSumOfSubarrays.go
+│ └── ...
+├── Greedy
+│ ├── canJump.go
+│ └── lengthOfLIS.go
+└── ...
+```
 
 ## Features
 
@@ -93,35 +80,24 @@ This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE
 
 本仓库的代码按算法技巧和问题分类进行组织。每个目录包含相关问题及其解决方案。该仓库使用 **Go** 编程语言进行解决方案的编写。
 
----
+```
+.
+├── BFS
+│ ├── RightViewOfBinaryTree.go
+│ └── numIslands.go
+├── DFS
+│ ├── numIslands.go
+│ └── wordBreak.go
+├── DynamicProgramming
+│ ├── ClimbStairs.go
+│ ├── MaximumSumOfSubarrays.go
+│ └── ...
+├── Greedy
+│ ├── canJump.go
+│ └── lengthOfLIS.go
+└── ...
+```
 
-## BFS
-- `RightViewOfBinaryTree.go`
-- `numIslands.go`
-
----
-
-## DFS
-- `numIslands.go`
-- `wordBreak.go`
-
----
-
-## DynamicProgramming
-- `ClimbStairs.go`
-- `MaximumSumOfSubarrays.go`
-- `...`
-
----
-
-## Greedy
-- `canJump.go`
-- `lengthOfLIS.go`
-
----
-
-## Other
-- `...`
 
 ## 特性
 
