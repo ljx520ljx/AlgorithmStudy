@@ -22,31 +22,18 @@ The code in this repository is organized by algorithmic technique and problem ca
 
 .
 ├── BFS
-
 │ ├── RightViewOfBinaryTree.go
-
 │ └── numIslands.go
-
 ├── DFS
-
 │ ├── numIslands.go
-
 │ └── wordBreak.go
-
 ├── DynamicProgramming
-
 │ ├── ClimbStairs.go
-
 │ ├── MaximumSumOfSubarrays.go
-
 │ └── ...
-
 ├── Greedy
-
 │ ├── canJump.go
-
 │ └── lengthOfLIS.go
-
 └── ...
 
 
@@ -89,7 +76,8 @@ This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE
 
 本仓库的代码按算法技巧和问题分类进行组织。每个目录包含相关问题及其解决方案。该仓库使用 **Go** 编程语言进行解决方案的编写。
 
-. ├── BFS
+.
+├── BFS
 │ ├── RightViewOfBinaryTree.go
 │ └── numIslands.go
 ├── DFS
@@ -103,7 +91,6 @@ This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE
 │ ├── canJump.go
 │ └── lengthOfLIS.go
 └── ...
-
 
 ## 特性
 
