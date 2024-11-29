@@ -20,7 +20,8 @@ This repository contains a collection of algorithm implementations and solutions
 
 The code in this repository is organized by algorithmic technique and problem category. Each directory contains related problems and their solutions. The repository includes solutions in **Go** programming language.
 
-. ├── BFS
+.
+├── BFS
 │ ├── RightViewOfBinaryTree.go
 │ └── numIslands.go
 ├── DFS
@@ -34,7 +35,6 @@ The code in this repository is organized by algorithmic technique and problem ca
 │ ├── canJump.go
 │ └── lengthOfLIS.go
 └── ...
-
 
 ## Features
 
