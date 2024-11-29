@@ -22,19 +22,33 @@ The code in this repository is organized by algorithmic technique and problem ca
 
 .
 ├── BFS
+
 │ ├── RightViewOfBinaryTree.go
+
 │ └── numIslands.go
+
 ├── DFS
+
 │ ├── numIslands.go
+
 │ └── wordBreak.go
+
 ├── DynamicProgramming
+
 │ ├── ClimbStairs.go
+
 │ ├── MaximumSumOfSubarrays.go
+
 │ └── ...
+
 ├── Greedy
+
 │ ├── canJump.go
+
 │ └── lengthOfLIS.go
+
 └── ...
+
 
 ## Features
 
