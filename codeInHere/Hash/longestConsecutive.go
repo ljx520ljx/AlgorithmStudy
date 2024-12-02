@@ -1,4 +1,4 @@
-package SpecialAlgorithm
+package Hash
 
 //最长连续序列
 //一个未排序的整数数组,nums找出数字连续(如:1,2,3)的最长序列（不要求序列元素在原数组中连续）的长度。

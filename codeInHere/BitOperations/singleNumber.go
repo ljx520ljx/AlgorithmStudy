@@ -1,4 +1,4 @@
-package SpecialAlgorithm
+package BitOperations
 
 //只出现一次的数字,找到数组里只出现了一次的数字,要求时间复杂度0(n),空间复杂度0(1)
 /*

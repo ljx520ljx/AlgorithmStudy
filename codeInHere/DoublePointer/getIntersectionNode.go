@@ -1,4 +1,4 @@
-package SpecialAlgorithm
+package DoublePointer
 
 //相交链表:给你两个单链表的头节点headA和headB.
 //请你找出并返回两个单链表相交的起始节点.如果两个链表不存在相交节点,返回 null.
@@ -19,10 +19,10 @@ package SpecialAlgorithm
 如果其中一个链表为空，则直接返回 null。
 */
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+//type ListNode struct {
+//	Val  int
+//	Next *ListNode
+//}
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	if headA == nil || headB == nil {
