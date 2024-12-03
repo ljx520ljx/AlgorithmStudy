@@ -1,6 +1,6 @@
 package SortAlgorithm
 
-//升序排序链表
+// ListNode 升序排序链表
 /*
 算法思路:归并排序
 切分链表：

@@ -12,7 +12,21 @@ package Hash
 增加以后，这些数必然大于 n。最后我们遍历 nums，若 nums[i] 未大于 n，就说明没有遇到过数 i+1。这样我们就找到了缺失的数字。
 */
 
-func findDisappearedNumbers(nums []int) (ans []int) {
+func findDisappearedNumbers(nums []int) []int {
+	var res []int
+	numMap := make(map[int]bool, len(nums))
+	for _, j := range nums {
+		numMap[j] = true
+	}
+	for i := 1; i <= len(nums); i++ {
+		if !numMap[i] {
+			res = append(res, i)
+		}
+	}
+	return res
+}
+
+func findDisappearedNumbers1(nums []int) (ans []int) {
 	n := len(nums)
 	for _, v := range nums {
 		v = (v - 1) % n

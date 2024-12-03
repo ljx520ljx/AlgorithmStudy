@@ -1,6 +1,6 @@
 package LRU
 
-// LRU
+// LRUCache LRU
 /*
 实现 LRUCache 类：
 LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存

@@ -1,6 +1,6 @@
 package ImplementPrefixTree
 
-//实现Trie(前缀树)
+// Trie 实现Trie(前缀树)
 /*
 算法思路
 Trie（前缀树）是用于高效存储和检索字符串的一种树形数据结构。

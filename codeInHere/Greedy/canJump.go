@@ -5,7 +5,7 @@ package Greedy
 //判断你是否能够到达最后一个下标,如果可以,返回 true;否则返回false
 /*
 算法思路:贪心算法
-初始化一个变量 maxReach 为 0，表示我们当前能到达的最远位置。
+初始化一个变量 maxReach 为 0,表示我们当前能到达的最远位置。
 遍历数组中的每个位置 i，并检查：
 如果当前位置 i 超出了 maxReach，说明我们无法到达该位置，返回 false。
 更新 maxReach 为 max(maxReach, i + nums[i])，即考虑当前位置 i 的跳跃能力。
