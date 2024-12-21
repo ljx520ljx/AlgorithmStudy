@@ -23,29 +23,38 @@ func calcEquation(equations [][]string, values []float64, queries [][]string) []
 		graph[a][b] = values[i]
 		graph[b][a] = 1 / values[i]
 	}
-
+	// 深度优先搜索
 	var dfs func(start, end string, visited map[string]bool) float64
 	dfs = func(start, end string, visited map[string]bool) float64 {
+		// 检查该节点是否存在
 		if _, exists := graph[start]; !exists {
 			return -1.0
 		}
+		// 检查是不是自己,是自己就返回1
 		if start == end {
 			return 1.0
 		}
+		// 标记已经访问过
 		visited[start] = true
+		// 遍历邻居节点
 		for neighbor, value := range graph[start] {
 			if !visited[neighbor] {
+				// 递归搜索邻居节点
 				res := dfs(neighbor, end, visited)
+				// 如果找到路径，返回结果
 				if res != -1.0 {
 					return value * res
 				}
 			}
 		}
+		// 未找到路径
 		return -1.0
 	}
 
 	result := make([]float64, len(queries))
+	// 遍历查询储存答案
 	for i, query := range queries {
+		// 初始化visited
 		visited := make(map[string]bool)
 		result[i] = dfs(query[0], query[1], visited)
 	}
