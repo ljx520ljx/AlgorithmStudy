@@ -15,7 +15,7 @@ func largestRectangleArea(heights []int) int {
 	for i := 0; i < n; i++ {
 		right[i] = n
 	}
-	monoStack := []int{}
+	var monoStack []int
 	for i := 0; i < n; i++ {
 		for len(monoStack) > 0 && heights[monoStack[len(monoStack)-1]] >= heights[i] {
 			right[monoStack[len(monoStack)-1]] = i
