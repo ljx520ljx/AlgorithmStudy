@@ -15,18 +15,18 @@ func largestRectangleArea(heights []int) int {
 	for i := 0; i < n; i++ {
 		right[i] = n
 	}
-	mono_stack := []int{}
+	monoStack := []int{}
 	for i := 0; i < n; i++ {
-		for len(mono_stack) > 0 && heights[mono_stack[len(mono_stack)-1]] >= heights[i] {
-			right[mono_stack[len(mono_stack)-1]] = i
-			mono_stack = mono_stack[:len(mono_stack)-1]
+		for len(monoStack) > 0 && heights[monoStack[len(monoStack)-1]] >= heights[i] {
+			right[monoStack[len(monoStack)-1]] = i
+			monoStack = monoStack[:len(monoStack)-1]
 		}
-		if len(mono_stack) == 0 {
+		if len(monoStack) == 0 {
 			left[i] = -1
 		} else {
-			left[i] = mono_stack[len(mono_stack)-1]
+			left[i] = monoStack[len(monoStack)-1]
 		}
-		mono_stack = append(mono_stack, i)
+		monoStack = append(monoStack, i)
 	}
 	ans := 0
 	for i := 0; i < n; i++ {
