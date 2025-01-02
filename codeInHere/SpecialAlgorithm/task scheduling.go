@@ -28,11 +28,3 @@ func leastInterval(tasks []byte, n int) int {
 
 	return len(tasks) + idleSlots
 }
-
-// 最大值函数
-//func max(a, b int) int {
-//	if a > b {
-//		return a
-//	}
-//	return b
-//}
