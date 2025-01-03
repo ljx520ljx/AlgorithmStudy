@@ -1,4 +1,4 @@
-package Stack
+package Queue
 
 import "math"
 
