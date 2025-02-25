@@ -2,7 +2,7 @@ package DynamicProgramming
 
 import "math"
 
-//买卖股票的最佳时机
+//买卖股票的最佳时机,只能买卖一次
 /*
 算法思路:动态规划
 遍历价格数组时，minPrice初始化为一个很大的值.
