@@ -24,11 +24,12 @@ func trap(height []int) int {
 		return 0
 	}
 
-	left, right := 0, len(height)-1
-	leftMax, rightMax := 0, 0
-	water := 0
+	left, right := 0, len(height)-1 //左右指针
+	leftMax, rightMax := 0, 0       //左边界最高点、右边界最高点
+	water := 0                      //被接住的雨水
 
 	for left < right {
+		//这样保证了右边的墙高大于左边的墙高，往右走能接住雨水
 		if height[left] < height[right] {
 			if height[left] >= leftMax {
 				leftMax = height[left]
@@ -36,7 +37,7 @@ func trap(height []int) int {
 				water += leftMax - height[left]
 			}
 			left++
-		} else {
+		} else { //左边的墙高大于右边的墙高，往左走能接住雨水
 			if height[right] >= rightMax {
 				rightMax = height[right]
 			} else {
