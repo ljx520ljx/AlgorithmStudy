@@ -17,7 +17,7 @@ func quickselect(nums []int, l, r, k int) int {
 		return nums[k]
 	}
 	randIndex := rand.Intn(r-l+1) + l
-	nums[l], nums[randIndex] = nums[l], nums[randIndex]
+	nums[l], nums[randIndex] = nums[randIndex], nums[l]
 	partition := nums[l]
 	i := l - 1
 	j := r + 1

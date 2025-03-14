@@ -9,7 +9,7 @@ mid := left + (right-left)/2
 如果nums[mid] < target,left = mid + 1
 如果nums[mid] > target,right = mid - 1
 */
-func search(nums []int, target int) int {
+func binarysearch(nums []int, target int) int {
 	left, right := 0, len(nums)-1
 	for left <= right {
 		mid := left + (right-left)/2
