@@ -26,11 +26,11 @@ func topKFrequent(nums []int, k int) []int {
 			heap.Pop(h)
 		}
 	}
-	ret := make([]int, k)
+	res := make([]int, k)
 	for i := 0; i < k; i++ {
-		ret[k-i-1] = heap.Pop(h).([2]int)[0]
+		res[k-i-1] = heap.Pop(h).([2]int)[0]
 	}
-	return ret
+	return res
 }
 
 type IHeap [][2]int
