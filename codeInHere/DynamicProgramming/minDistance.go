@@ -20,6 +20,36 @@ f[i][0] = i，表示将 word1 的前 i 个字符转换为空字符串需要 i �
 时间复杂度：O(nm)，其中 n 为 s 的长度，m 为 t 的长度。
 */
 
+func minDistance3(s, t string) int {
+	n, m := len(s), len(t)
+	memo := make([][]int, n)
+	for i := range memo {
+		memo[i] = make([]int, m)
+		for j := range memo[i] {
+			memo[i][j] = -1 // -1 表示还没有计算过
+		}
+	}
+	var dfs func(int, int) int
+	dfs = func(i, j int) (res int) {
+		if i < 0 {
+			return j + 1
+		}
+		if j < 0 {
+			return i + 1
+		}
+		p := &memo[i][j]
+		if *p != -1 { // 之前计算过
+			return *p
+		}
+		defer func() { *p = res }() // 记忆化
+		if s[i] == t[j] {
+			return dfs(i-1, j-1)
+		}
+		return min(dfs(i-1, j), dfs(i, j-1), dfs(i-1, j-1)) + 1
+	}
+	return dfs(n-1, m-1)
+}
+
 func minDistance(s, t string) int {
 	n, m := len(s), len(t)
 	f := make([][]int, n+1)
