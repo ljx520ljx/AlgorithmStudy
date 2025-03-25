@@ -30,6 +30,8 @@ func coinChange(coins []int, amount int) int {
 		//从x开始,对于那些金额小于硬币面值的就不用遍历节约时间
 		for c := x; c <= amount; c++ {
 			dp[c] = min(dp[c], dp[c-x]+1)
+			//   dp[c] ：不使用当前硬币x的最少硬币数
+			//dp[c-x]+1：使用当前硬币x的最少硬币数（就是金额c-x的最优解+1）
 		}
 	}
 	ans := dp[amount]

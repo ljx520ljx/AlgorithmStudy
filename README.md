@@ -13,9 +13,9 @@ This repository contains a collection of algorithm implementations and solutions
 - **Backtracking**
 - **Sorting Algorithms**
 - **Queues and Stacks**
-- **Prefix Trees (Tries)**
+- **Trees**
 - **Linked Lists**
-- **Graph Algorithms**
+- **Graph**
 
 ## Repository Structure
 
@@ -72,9 +72,9 @@ This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE
 - **回溯**
 - **排序算法**
 - **队列与栈**
-- **前缀树（Trie）**
+- **树**
 - **链表**
-- **图算法**
+- **图**
 
 ## 仓库结构
 

@@ -1,4 +1,4 @@
-package DeSerializationOfBinaryTrees
+package DFS
 
 import (
 	"strconv"
@@ -14,12 +14,12 @@ serialize(root) 利用dfs遍历二叉树，把二叉树序列化为字符串
 deserialize(data) 把字符串反序列化为二叉树
 */
 
-// TreeNode Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+//// TreeNode Definition for a binary tree node.
+//type TreeNode struct {
+//	Val   int
+//	Left  *TreeNode
+//	Right *TreeNode
+//}
 
 type Codec struct{}
 
