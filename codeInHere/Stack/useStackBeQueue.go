@@ -24,7 +24,7 @@ type MyQueue struct {
 	stack2 []int // 输出栈
 }
 
-// 构造函数，初始化两个栈
+// Constructor1 构造函数，初始化两个栈
 func Constructor1() MyQueue {
 	return MyQueue{
 		stack1: make([]int, 0),

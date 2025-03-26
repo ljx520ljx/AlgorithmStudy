@@ -21,3 +21,20 @@ func detectCycle(head *ListNode) *ListNode {
 	}
 	return nil
 }
+
+// 快慢指针,自己画图设未知数可解
+func detectCycle1(head *ListNode) *ListNode {
+	slow, fast := head, head
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+		if fast == slow {
+			for head != slow {
+				slow = slow.Next
+				head = head.Next
+			}
+			return slow
+		}
+	}
+	return nil
+}
