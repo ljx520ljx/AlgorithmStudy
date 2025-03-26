@@ -21,57 +21,70 @@ import "math"
 */
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	// 确保 nums1 是较短的数组
+	// 确保nums1的长度小于等于nums2，这样可以减少边界情况的处理
 	if len(nums1) > len(nums2) {
-		return findMedianSortedArrays(nums2, nums1)
+		nums1, nums2 = nums2, nums1
 	}
 
 	m, n := len(nums1), len(nums2)
-	low, high := 0, m
-	halfLen := (m + n + 1) / 2
+	left, right := 0, m
 
-	for low <= high {
-		// i 是 nums1 的分割点
-		i := (low + high) / 2
-		// j 是 nums2 的分割点
-		j := halfLen - i
+	// 二分查找的目标是找到一个位置，将两个数组分成左右两部分，使得：
+	// 1. 左半部分的长度等于右半部分（或比右半部分多1个元素）
+	// 2. 左半部分的最大值小于等于右半部分的最小值
+	for left <= right {
+		// partitionX是nums1的分割点
+		partitionX := (left + right) / 2
+		// partitionY是nums2的分割点，保证左半部分总长度为(m+n+1)/2
+		partitionY := (m+n+1)/2 - partitionX
 
-		// 边界值
-		nums1LeftMax := math.Inf(-1)
-		if i > 0 {
-			nums1LeftMax = float64(nums1[i-1])
-		}
-		nums1RightMin := math.Inf(1)
-		if i < m {
-			nums1RightMin = float64(nums1[i])
-		}
+		// 获取分割点左右的值
+		var maxLeftX, minRightX, maxLeftY, minRightY int
 
-		nums2LeftMax := math.Inf(-1)
-		if j > 0 {
-			nums2LeftMax = float64(nums2[j-1])
-		}
-		nums2RightMin := math.Inf(1)
-		if j < n {
-			nums2RightMin = float64(nums2[j])
-		}
-
-		// 检查是否满足分割条件
-		if nums1LeftMax <= nums2RightMin && nums2LeftMax <= nums1RightMin {
-			// 中位数计算
-			if (m+n)%2 == 0 {
-				return (math.Max(nums1LeftMax, nums2LeftMax) + math.Min(nums1RightMin, nums2RightMin)) / 2.0
-			}
-			return math.Max(nums1LeftMax, nums2LeftMax)
-		} else if nums1LeftMax > nums2RightMin {
-			// i 太大了，向左调整
-			high = i - 1
+		// 处理nums1分割点的边界情况
+		if partitionX == 0 {
+			maxLeftX = math.MinInt32
 		} else {
-			// i 太小了，向右调整
-			low = i + 1
+			maxLeftX = nums1[partitionX-1]
+		}
+		if partitionX == m {
+			minRightX = math.MaxInt32
+		} else {
+			minRightX = nums1[partitionX]
+		}
+
+		// 处理nums2分割点的边界情况
+		if partitionY == 0 {
+			maxLeftY = math.MinInt32
+		} else {
+			maxLeftY = nums2[partitionY-1]
+		}
+		if partitionY == n {
+			minRightY = math.MaxInt32
+		} else {
+			minRightY = nums2[partitionY]
+		}
+
+		// 检查是否找到正确的分割点
+		if maxLeftX <= minRightY && maxLeftY <= minRightX {
+			// 找到了正确的分割点，计算中位数
+			if (m+n)%2 == 0 {
+				// 偶数个元素，取两部分的平均值
+				return float64(max(maxLeftX, maxLeftY)+min(minRightX, minRightY)) / 2.0
+			} else {
+				// 奇数个元素，取左半部分的最大值
+				return float64(max(maxLeftX, maxLeftY))
+			}
+		} else if maxLeftX > minRightY {
+			// nums1的左半部分太大，需要向左移动
+			right = partitionX - 1
+		} else {
+			// nums1的左半部分太小，需要向右移动
+			left = partitionX + 1
 		}
 	}
 
-	return 0.0 // 不应该到达这里
+	return 0.0 // 不会达到这里
 }
 
 //简单合并数组法,时间复杂度为0(m+n)

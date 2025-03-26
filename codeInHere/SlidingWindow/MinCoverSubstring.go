@@ -26,7 +26,9 @@ func minWindow(s string, t string) string {
 	// 初始化窗口和相关变量
 	window := make(map[byte]int)
 	left, right := 0, 0
+	// valid表示窗口中满足need条件的字符个数
 	valid := 0
+	// 记录最小覆盖子串的起始索引和长度
 	start, length := 0, len(s)+1
 
 	for right < len(s) {
@@ -67,3 +69,42 @@ func minWindow(s string, t string) string {
 	}
 	return s[start : start+length]
 }
+
+//func minWindow(s string, t string) string {
+//	need:=make(map[byte]int,len(t))
+//	for i:=range t{
+//		need[t[i]]++
+//	}
+//	window:=make(map[byte]int)
+//	left,right:=0,0
+//	start,length:=0,len(s)+1
+//	vaild:=0
+//	for right<len(s){
+//		c:=s[right]
+//		if need[c]>0{
+//			window[c]++
+//			if window[c]==need[c]{
+//				vaild++
+//			}
+//		}
+//		for vaild==len(need){
+//			if right-left+1<length{
+//				start=left
+//				length=right-left+1
+//			}
+//			d:=s[left]
+//			if need[d]>0{
+//				window[d]--
+//				if window[d]<need[d]{
+//					vaild--
+//				}
+//			}
+//			left++
+//		}
+//		right++
+//	}
+//	if length==len(s)+1{
+//		return ""
+//	}
+//	return s[start:start+length]
+//}
