@@ -1,4 +1,4 @@
-package SpecialAlgorithm
+package string
 
 //把字符串转换为整数
 /*

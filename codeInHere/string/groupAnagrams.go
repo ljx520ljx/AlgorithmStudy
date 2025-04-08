@@ -1,4 +1,4 @@
-package SpecialAlgorithm
+package string
 
 import (
 	"slices"

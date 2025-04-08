@@ -9,8 +9,8 @@ set 是一个临时的数组，用来保存当前递归路径上的子集。
 dfs 是一个递归函数，负责生成子集。在每一步，递归会考虑是否包括当前元素 nums[cur]。
 当 cur == len(nums) 时，表示已经处理完所有元素，此时将当前的 set（即子集）添加到结果 ans 中。
 递归的核心思想是：
-包括当前元素 nums[cur]。
-不包括当前元素 nums[cur]。
+包括当前元素 append(set,nums[cur])。
+不包括当前元素 dfs(cur + 1)。
 */
 func subsets(nums []int) (ans [][]int) {
 	var set []int

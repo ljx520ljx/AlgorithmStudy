@@ -33,9 +33,9 @@ func copyRandomList(head *Node) *Node {
 
 	// 第一步：在每个节点后创建复制节点
 	for curr := head; curr != nil; curr = curr.Next.Next {
-		copy := &Node{Val: curr.Val}
-		copy.Next = curr.Next
-		curr.Next = copy
+		c := &Node{Val: curr.Val}
+		c.Next = curr.Next
+		curr.Next = c
 	}
 
 	// 第二步：设置复制节点的 Random 指针
@@ -48,10 +48,10 @@ func copyRandomList(head *Node) *Node {
 	// 第三步：分离链表
 	newHead := head.Next
 	for curr := head; curr != nil; curr = curr.Next {
-		copy := curr.Next
-		curr.Next = copy.Next
-		if copy.Next != nil {
-			copy.Next = copy.Next.Next
+		next := curr.Next
+		curr.Next = next.Next
+		if next.Next != nil {
+			next.Next = next.Next.Next
 		}
 	}
 	return newHead
