@@ -49,6 +49,16 @@ func removeKdigits(num string, k int) string {
 		stack = append(stack, digit)
 	}
 	stack = stack[:len(stack)-k]
+	//也可以用这个方式处理前导零
+	//index:=0
+	//for index<len(stack){
+	//	if stack[index]=='0'{
+	//		index++
+	//	}else{
+	//		break
+	//	}
+	//}
+	//res:=string(stack[index:])
 	// 将栈转换成字符串
 	result := string(stack)
 	// 处理前导零
