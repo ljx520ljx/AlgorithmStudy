@@ -1,4 +1,4 @@
-package SortAlgorithm
+package Graph
 
 //课程表,即判断选修某些课程之前需要一些先修课程过程中是否存在环
 /*
