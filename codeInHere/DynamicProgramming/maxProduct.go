@@ -33,9 +33,6 @@ func maxProduct(nums []int) int {
 func maxProduct1(nums []int) int {
 	n := len(nums)
 	fMax, fMin, maxNum := nums[0], nums[0], nums[0]
-	if len(nums) == 1 {
-		return fMax
-	}
 	for i := 1; i < n; i++ {
 
 		tmpMin := min(nums[i], fMax*nums[i], fMin*nums[i])
