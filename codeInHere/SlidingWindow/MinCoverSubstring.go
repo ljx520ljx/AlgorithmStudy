@@ -70,7 +70,7 @@ func minWindow(s string, t string) string {
 	return s[start : start+length]
 }
 
-//func minWindow(s string, t string) string {
+//func minWindow(s String, t String) String {
 //	need:=make(map[byte]int,len(t))
 //	for i:=range t{
 //		need[t[i]]++

@@ -1,4 +1,4 @@
-package string
+package String
 
 // RoMan 13. 罗马数字转整数
 //罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。把罗马数字转换成整数。

@@ -1,4 +1,4 @@
-package string
+package String
 
 import (
 	"slices"
@@ -49,7 +49,7 @@ func groupAnagrams2(strs []string) [][]string {
 	strMap := make(map[string][]string, len(strs))
 
 	for _, s := range strs {
-		// 将字符串转为字符切片并排序，直接使用 string 转回排序后的字符串作为 map 键
+		// 将字符串转为字符切片并排序，直接使用 String 转回排序后的字符串作为 map 键
 		sortedStr := sortString(s)
 		strMap[sortedStr] = append(strMap[sortedStr], s)
 	}

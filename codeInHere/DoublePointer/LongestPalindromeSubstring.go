@@ -44,8 +44,8 @@ func longestPalindrome(s string) string {
 }
 
 //自己写的史,超长复杂度
-//func longestPalindrome(s string) string {
-//	var maxs string
+//func longestPalindrome(s String) String {
+//	var maxs String
 //	charmap:=make(map[byte][]int)
 //	s1:=[]byte(s)
 //	for i,char:=range s1{

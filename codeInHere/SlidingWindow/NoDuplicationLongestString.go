@@ -45,7 +45,7 @@ func lengthOfLongestSubstring(s string) int {
 
 //理解题后自己重写的
 
-//func lengthOfLongestSubstring(s string) int {
+//func lengthOfLongestSubstring(s String) int {
 //	charMap := make(map[rune]int)
 //	maxlength, left := 0, 0
 //	for right, char := range s {

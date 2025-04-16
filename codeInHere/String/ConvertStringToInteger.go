@@ -1,4 +1,4 @@
-package string
+package String
 
 //把字符串转换为整数
 /*

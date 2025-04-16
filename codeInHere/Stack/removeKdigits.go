@@ -58,7 +58,7 @@ func removeKdigits(num string, k int) string {
 	//		break
 	//	}
 	//}
-	//res:=string(stack[index:])
+	//res:=String(stack[index:])
 	// 将栈转换成字符串
 	result := string(stack)
 	// 处理前导零
