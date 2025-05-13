@@ -20,32 +20,17 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func rob1(root *TreeNode) int {
+func rob2(root *TreeNode) int {
 	var dfs func(node *TreeNode) (int, int)
 	dfs = func(node *TreeNode) (int, int) {
 		if node == nil {
 			return 0, 0
 		}
-		Lrob, Lnotrob := dfs(node.Left)
-		Rrob, Rnotrob := dfs(node.Right)
-		rob := node.Val + Lnotrob + Rnotrob
-		notrob := max(Lrob, Lnotrob) + max(Rrob, Rnotrob)
+		Lrob, Lnotrob := dfs(node.Left)                   // 递归左子树
+		Rrob, Rnotrob := dfs(node.Right)                  // 递归右子树
+		rob := node.Val + Lnotrob + Rnotrob               // 选
+		notrob := max(Lrob, Lnotrob) + max(Rrob, Rnotrob) // 不选
 		return rob, notrob
 	}
 	return max(dfs(root))
-}
-
-func dfs(node *TreeNode) (int, int) {
-	if node == nil { // 递归边界
-		return 0, 0 // 没有节点，怎么选都是 0
-	}
-	lRob, lNotRob := dfs(node.Left)                   // 递归左子树
-	rRob, rNotRob := dfs(node.Right)                  // 递归右子树
-	rob := lNotRob + rNotRob + node.Val               // 选
-	notRob := max(lRob, lNotRob) + max(rRob, rNotRob) // 不选
-	return rob, notRob
-}
-
-func rob2(root *TreeNode) int {
-	return max(dfs(root)) // 根节点选或不选的最大值
 }
